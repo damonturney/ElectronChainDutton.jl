@@ -1,0 +1,51 @@
+
+[ligands]
+cif_pdb_filename_or_manual = "BD_PD_A1_A2.cif"        #"manual" to enter atomic coordinates (Angstroms) manually
+cif_pdb_identifiers_or_manual_data = [
+            ["_atom_site.label_comp_id", "HEM", "_atom_site.pdbx_PDB_model_num", "4"],         # "attribute", "label", "attribute", "label", ... ] for extracting BD ligand coordinates from cif or pdb file
+            ["_atom_site.label_comp_id", "HEM", "_atom_site.pdbx_PDB_model_num", "1"],         # "attribute", "label", "attribute", "label", ... ] for extracting PD ligand coordinates from cif or pdb file
+            ["_atom_site.label_comp_id", "VIO", "_atom_site.pdbx_PDB_model_num", "3"],         # "attribute", "label", "attribute", "label", ... ] for extracting A1 ligand coordinates from cif or pdb file
+            ["_atom_site.label_comp_id", "HEM", "_atom_site.pdbx_PDB_model_num", "2"]          # "attribute", "label", "attribute", "label", ... ] for extracting A2 ligand coordinates from cif or pdb file
+    # [[-10.0, 0.0, 0.0]],                                                                     # Angstroms (Å)   manual method for BD ligand coordinates
+    # [[0.0, 0.0, 0.0]],                                                                       # Angstroms (Å)   manual method for PD ligand coordinates
+    # [[10.0, 0.0, 0.0]],                                                                      # Angstroms (Å)   manual method for A1 ligand coordinates
+    # [[20.0, 0.0, 0.0]]                                                                       # Angstroms (Å)   manual method for A2 ligand coordinates
+]
+
+[thermodynamics]
+V_orbitals = [0.1, 0.77, -1.34, -0.75, -0.19, 0.2] # Volts (V vs NHE)
+lambda_dG = 0.7                               # Electron-volts (eV)
+K_d_D_bim = 1.0e-3                            # Moles per liter (M or mol/L)
+k_eEPD_eGPD_gem = 0.0004                      # Inverse seconds (s⁻¹)
+
+[environment]
+conc_chains = 100.0e-6                        # Moles per liter (M or mol/L)
+mixture_volume = 1.0e-4                       # Liters (L)
+illuminated_cross_section = 1.0e-3            # Square meters (m²)
+reD_conc_t0 = 50000.0e-6                      # Moles per liter (M or mol/L)
+oxD_conc_t0 = 50000.0e-6                      # Moles per liter (M or mol/L)
+reAt_conc_t0 = 100.0e-6                       # Moles per liter (M or mol/L)
+oxAt_conc_t0 = 100.0e-6                       # Moles per liter (M or mol/L)
+
+[geometry]
+radius_gyr_D = 3.0                            # Angstroms (Å)
+radius_gyr_At = 3.0                           # Angstroms (Å)
+radius_gyr_chain = 9.0                        # Angstroms (Å)
+radius_chain = 10.0                           # Angstroms (Å)
+radius_D = 3.0                                # Angstroms (Å)
+radius_At = 3.0                               # Angstroms (Å)
+d_bim = 5.0                                   # Angstroms (Å)
+d_edge_At = 50.0                              # Angstroms (Å)
+
+[diffusion]
+D_chain = 2.0e-9                              # Square meters per second (m²/s)
+D_D = 2.0e-9                                  # Square meters per second (m²/s)
+D_At = 1.0e-9                                 # Square meters per second (m²/s)
+
+[pulse]
+pulse_type = 3                                # Dimensionless (Integer flag)
+pulse_param1 = 0.10e32                        # Photons per square meter per second (photons/m²/s)
+pulse_param2 = 4000.0                         # Picoseconds (ps)
+pulse_param3 = 200.0                          # Picoseconds (ps)
+eGPD_cross_section = 5.0e-20                  # Square meters (m²)
+tspan = 1.0e5                                 # Picoseconds (ps)
