@@ -48,19 +48,15 @@ double check that your bimolecular reaction flux is correct: flow = k_obs * u[rx
 =# 
 
 module ElectronChainDutton
-using Printf
 using DifferentialEquations
 using Statistics:mean
-using Statistics:mean
 using LinearAlgebra:norm
-
+using TOML
 using Printf
-
 import PyCall
 import PyPlot as plt
 
-# The __init__() function runs only when the module initializes
-function __init__()
+function __init__()                # The __init__() function runs only when the module initializes
     if haskey(ENV, "DISPLAY") || Sys.iswindows() || Sys.isapple()    # Only hook up Qt5 if the runtime detects a functional monitor display system
         try
             PyCall.pygui(:qt5)
@@ -70,7 +66,6 @@ function __init__()
     else
         plt.matplotlib.use("Agg")   # Fallback to a safe headless backend when running on cloud servers/bots
     end
-    
     plt.close("all")
     plt.ioff()
 end
@@ -666,7 +661,6 @@ end
 
 
 
-using TOML
 
 function build_input_parameters(config_path::String)
 
