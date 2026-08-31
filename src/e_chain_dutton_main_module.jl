@@ -1111,7 +1111,7 @@ function plot_and_data_dump(solution, ode_p, p)
     end
     data_dump = Dict(
         "moles_incident_photons" => moles_incident_photons,
-        "moles_A2_produced" => moles_A2_produced,
+        "moles_A2_produced" => moles_A2_produced, 
         "total_efficiency" => total_efficiency,
         "quantum_efficiency" => quantum_efficiency
     )
