@@ -57,11 +57,23 @@ using LinearAlgebra:norm
 using Printf
 
 import PyCall
-PyCall.pygui(:qt5)
 import PyPlot as plt
-plt.close("all")
-plt.ioff()
 
+# The __init__() function runs only when the module initializes
+function __init__()
+    if haskey(ENV, "DISPLAY") || Sys.iswindows() || Sys.isapple()    # Only hook up Qt5 if the runtime detects a functional monitor display system
+        try
+            PyCall.pygui(:qt5)
+        catch e
+            @warn "Failed to initialize Qt5 GUI window interface: $e"
+        end
+    else
+        plt.matplotlib.use("Agg")   # Fallback to a safe headless backend when running on cloud servers/bots
+    end
+    
+    plt.close("all")
+    plt.ioff()
+end
 
 
 
