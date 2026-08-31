@@ -1,7 +1,7 @@
 name = "ElectronChainDutton"
 uuid = "bb8bfab8-311e-4066-b24d-79eaddd59570"
 authors = ["Damon Turney <damonturney@gmail.com>"]
-version = "0.4.0"
+version = "1.0.0"
 
 [deps]
 Conda = "8f4d0f93-b110-5947-807f-2305c1781a2d"
