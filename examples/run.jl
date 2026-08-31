@@ -16,11 +16,11 @@
 
 
 # Comment out the line below if you don't want it re-compiled
-include("../src/e_chain_dutton_main_module.jl")
+include("../src/ElectronChainDutton.jl")
 
 # Generate the strongly-typed parameters locally
-p = e_chain_dutton_main_module.build_input_parameters("config.toml");
+p = ElectronChainDutton.build_input_parameters("config.toml");
 
 # Pass them to the precompiled module
-solution, ode_p = e_chain_dutton_main_module.run_simulation(p);
-e_chain_dutton_main_module.plot_and_data_dump(solution, ode_p, p)
+solution, ode_p = ElectronChainDutton.run_simulation(p);
+ElectronChainDutton.plot_and_data_dump(solution, ode_p, p)

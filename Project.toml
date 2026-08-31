@@ -1,4 +1,22 @@
-name = "e_chain_dutton"
+name = "EChainDutton"
 uuid = "bb8bfab8-311e-4066-b24d-79eaddd59570"
 authors = ["Damon Turney <damonturney@gmail.com>"]
-version = "0.2.0"
+version = "0.3.0"
+
+[compat]
+julia = "1.10"
+Conda = "1.10"
+DifferentialEquations = "7.17"
+FileIO = "1.16"
+GenericLinearAlgebra = "0.3.19"
+GenericSchur = "0.5.6"
+HDF5 = "0.17"
+Infiltrator = "1.9"
+LaTeXStrings = "1.4"
+LsqFit = "0.15"
+PackageCompiler = "2.4"
+PyCall = "1.96"
+PyPlot = "2.11"
+Revise = "3.12"
+TOML = "1.0"
+

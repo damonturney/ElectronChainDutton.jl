@@ -47,7 +47,7 @@ double check that your bimolecular reaction flux is correct: flow = k_obs * u[rx
 
 =# 
 
-module e_chain_dutton_main_module
+module ElectronChainDutton
 using Printf
 using DifferentialEquations
 using Statistics:mean
