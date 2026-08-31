@@ -17,7 +17,7 @@ PyPlot = "d330b81b-6aea-500a-939a-2ce795aea3ee"
 TOML = "fa267f1f-6049-4f14-aa54-33bafae1ed76"
 
 [compat]
-julia = "1.10"
+julia = "1.11"
 Conda = "1.10"
 DifferentialEquations = "7.17"
 FileIO = "1.16"
