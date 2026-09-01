@@ -777,7 +777,7 @@ end
 
 
 
-function plot_and_data_dump(solution, ode_p, p)
+function plot_and_data_output(solution, ode_p, p)
 
     ### Plot it all up 
     mkpath("output_data_n_figs") #this command automatically checks if the folder already exists
@@ -1115,14 +1115,14 @@ function plot_and_data_dump(solution, ode_p, p)
         println(@sprintf("Total Efficiency: %1.3e", total_efficiency))
         println(@sprintf("Quantum Efficiency: %1.3e", quantum_efficiency))
     end
-    data_dump = Dict(
+    data_output = Dict(
         "moles_incident_photons" => moles_incident_photons,
         "moles_A2_produced" => moles_A2_produced, 
         "total_efficiency" => total_efficiency,
         "quantum_efficiency" => quantum_efficiency
     )
     open("output_data_n_figs/results.toml", "w") do io
-        TOML.print(io, data_dump)
+        TOML.print(io, data_output)
     end
 
 
