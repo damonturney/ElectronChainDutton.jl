@@ -23,4 +23,4 @@ p = ElectronChainDutton.build_input_parameters("config.toml");
 
 # Pass them to the precompiled module
 solution, ode_p = ElectronChainDutton.run_simulation(p);
-ElectronChainDutton.plot_and_data_dump(solution, ode_p, p)
+ElectronChainDutton.plot_and_data_output(solution, ode_p, p)
